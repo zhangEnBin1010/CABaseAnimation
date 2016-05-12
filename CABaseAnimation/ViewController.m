@@ -64,14 +64,37 @@
     
     
     CABasicAnimation *bigSmallAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    bigSmallAnimation.fromValue = [NSNumber numberWithFloat:0.1];
-    bigSmallAnimation.toValue = [NSNumber numberWithFloat:1.5];
+    bigSmallAnimation.fromValue = [NSNumber numberWithFloat:0.5];
+    bigSmallAnimation.toValue = [NSNumber numberWithFloat:1];
     bigSmallAnimation.autoreverses = YES;
     bigSmallAnimation.fillMode = kCAFillModeForwards;
-    bigSmallAnimation.repeatCount = 1;
-    bigSmallAnimation.duration = 5;
+    bigSmallAnimation.repeatCount = 0.5;
+    bigSmallAnimation.duration = 2;
     
     [bigSmallLayer addAnimation:bigSmallAnimation forKey:@"bigSmallAnimation"];
+}
+- (void)initGroupAnimation {
+
+    UIImage *image = [UIImage imageNamed:@"22"];
+    
+    CALayer *groupLayer1 = [[CALayer alloc] init];
+    groupLayer1.frame = self.view.bounds;
+    groupLayer1.contents = (__bridge id)image.CGImage;
+    [self.view.layer addSublayer:groupLayer1];
+    
+    CABasicAnimation *bigSmallAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    bigSmallAnimation.fromValue = [NSNumber numberWithFloat:0.5];
+    bigSmallAnimation.toValue = [NSNumber numberWithFloat:1];
+    bigSmallAnimation.autoreverses = YES;
+    bigSmallAnimation.fillMode = kCAFillModeForwards;
+    bigSmallAnimation.repeatCount = 0.5;
+    bigSmallAnimation.duration = 2;
+    
+    [groupLayer1 addAnimation:bigSmallAnimation forKey:@"bigSmallAnimation"];
+    
+    
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

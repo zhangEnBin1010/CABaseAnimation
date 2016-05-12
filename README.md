@@ -225,3 +225,4 @@ CABasicAnimation *scaleAnim = [CABasicAnimation animationWithKeyPath:@"transform
     //旋转2遍，360度
     TransformAnim.repeatCount =2;
  [self.imageView.layer addAnimation:TransformAnim forKey:nil];
+转至http://www.cnblogs.com/shangdahao/archive/2013/03/17/2964261.html
